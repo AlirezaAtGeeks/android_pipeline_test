@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Express</string>
+    <string name="entering">Entering...</string>
+    <string name="leaving">Leaving...</string>
+    <string name="loading">Loading...</string>
+
+    <string name="print_job_completed">print job completed</string>
+    <string name="print_job_failed">print job failed</string>
+
+
+
+    <!--string use to detect emulator or rooted device-->
+    <string name="generic">generic</string>
+    <string name="unknown">unknown</string>
+    <string name="goldfish">goldfish</string>
+    <string name="ranchu">ranchu</string>
+    <string name="google_sdk">google_sdk</string>
+    <string name="emulator1">Emulator</string>
+    <string name="android_sdk_built_for_x86">Android SDK built for x86</string>
+    <string name="genymotion">Genymotion</string>
+    <string name="sdk_google">sdk_google</string>
+    <string name="sdk">sdk</string>
+    <string name="sdk_x86">sdk_x86</string>
+    <string name="vbox86p">vbox86p</string>
+    <string name="simulator">simulator</string>
+    <string name="emulator2">emulator</string>
+    <string name="su">su</string>
+    <string name="path">PATH</string>
+    <string name="colon">:</string>
+
+
+
+
+
+
+</resources>

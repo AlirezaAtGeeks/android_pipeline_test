@@ -1,0 +1,11 @@
+@startuml
+WebView -> "Javascript Bridge": call a method
+"Javascript Bridge" --> Services: Do the job
+
+WebView -> "Javascript Bridge": call a method
+note left : except a response
+"Javascript Bridge" --> Services: Do the job
+"Javascript Bridge" <-- Services: create a response
+WebView <- "Javascript Bridge": return the result
+
+@enduml

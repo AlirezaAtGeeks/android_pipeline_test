@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="container">
+	<div class="jumbotron text-center">
+		<h1>Welcome To</h1>
+		<h1>Parcel Shop Express </h1>
+		<h4>(Webapp)</h4>
+	</div>
+	<br>
+
+	<p>This is an example of web application running by android native webview and bind native features. javascripts and to show native toast is enabled. Device Printer , Bluetooth Printer and Camera will be enabled on next stages etc</p>
+	<br>
+	<br>
+	<br>
+	
+	<div class="container">
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="getKey" type="button" class="btn btn-primary btn-lg"  value="GetKey">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="getCert" type="button" class="btn btn-primary btn-lg"  value="GetCert">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="brightness" type="button" class="btn btn-primary btn-lg"  value="Brightness">
+				<select id="percentages">
+					<option value="1">1</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+				</select>
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="showBrightness" type="button" class="btn btn-primary btn-lg"  value="ShowBrightness">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="bluetoothIsConnected" type="button" class="btn btn-primary btn-lg"  value="Bluetooth IsConnected">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="deviceId" type="button" class="btn btn-primary btn-lg"  value="DeviceID">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="nearbyDevices" type="button" class="btn btn-primary btn-lg"  value="BluetoothNeabyDevices">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="pairedDevices" type="button" class="btn btn-primary btn-lg"  value="BluetoothPairedDevices">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="bluetoothTurnOff" type="button" class="btn btn-primary btn-lg"  value="BluetoothTurnOff">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="bluetoothPairDevice" type="button" class="btn btn-primary btn-lg"  value="BluetoothPairDevice">
+				<select id="pairOptions">
+					<option value="A4:DA:32:83:CC:B1">zebra printer</option>
+					<option value="34:81:F4:4D:1C:76">smaller printer</option>
+					<option value="34:81:F4:30:DD:26">larger printer</option>
+				</select>
+			</div>
+			
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="bluetoothUnpairDevice" type="button" class="btn btn-primary btn-lg"  value="BluetoothUnpairDevice">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="printBluetooth" type="button" class="btn btn-primary btn-lg"  value="PrintWithBluetoothPrinter">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="printLabelBluetooth" type="button" class="btn btn-primary btn-lg"  value="PrintLabelWithBluetoothPrinter">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="battery" type="button" class="btn btn-primary btn-lg"  value="Battery">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>1.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="batteryWithState" type="button" class="btn btn-primary btn-lg"  value="BatteryWithState">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>2.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifi" type="button" class="btn btn-primary btn-lg"  value="Wifi">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>2.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifiAsync" type="button" class="btn btn-primary btn-lg"  value="Wifi-Async">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>3.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifiConnect" type="button" class="btn btn-primary btn-lg"  value="Wifi-Connect">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>4.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifiDisconnect" type="button" class="btn btn-primary btn-lg"  value="Wifi-Disconnect">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>5.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifiIsConnected" type="button" class="btn btn-primary btn-lg"  value="Wifi-IsConnected">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>6.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifiIsEnabled" type="button" class="btn btn-primary btn-lg"  value="Wifi-IsEnabled">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>7.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="wifiTurnoff" type="button" class="btn btn-primary btn-lg"  value="Wifi-Turn off">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>8.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input type="button" class="btn btn-primary btn-lg" onClick="alert('I am Active')" value="ShowAlert">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>9.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input type="button" class="btn btn-primary btn-lg" onClick="window.androidInject.showToast('Hello Native')" value="showToast">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>10.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="toggle" type="button" class="btn btn-primary btn-lg"  value="startVideo">
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+			</div>
+			<div class="col-11 border text-center">
+				<video id="video" autoplay></video>
+			</div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+				<p>11.</p>
+			</div>
+			<div class="col-11 border text-center">
+				<input id="print" type="button" class="btn btn-primary btn-lg"  value="PrintMe">
+			</div>
+		</div>
+		
+		<div class="row mb-2">
+			<div class="col-1 border text-center">
+			</div>
+			<div class="col-11 border text-center">
+				<img src="img/toshow.png">
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="js/sample-video.js"></script>
+	<script src="js/print-next-pngfile.js"></script>
+	<script src="js/print-result.js"></script>
+	<script src="js/show-aps.js"></script>
+	<script src="js/show-battery.js"></script>
+	<script src="js/show-bluetooth.js"></script>
+	<script src="js/print-bluetooth-pngfile.js"></script>
+	<script src="js/show-build-number.js"></script>
+	<script src="js/show-brightness.js"></script>
+	<script src="js/show-keys.js"></script>
+</body>
+</html>

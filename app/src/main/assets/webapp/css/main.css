@@ -1,0 +1,10 @@
+.aligncenter {
+    text-align: center;
+}
+
+
+video {
+    width: 340px;
+    height: 280px;
+    /* transform: scaleX(-1); /* Mirror */
+}

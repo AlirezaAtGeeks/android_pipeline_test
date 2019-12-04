@@ -1,0 +1,71 @@
+@startuml
+
+title __Post Office Android App High Level Class Diagram__\n
+
+  namespace co.uk.postoffice.apps.parcelshop {
+    class co.uk.postoffice.apps.parcelshop.MainActivity {
+    }
+  }
+
+  namespace co.uk.postoffice.apps.parcelshop {
+    namespace dtos {
+      class co.uk.postoffice.apps.parcelshop.dtos.AccessPointDTO
+      class co.uk.postoffice.apps.parcelshop.dtos.BluetoothDeviceDTO
+    }
+  }
+
+  namespace co.uk.postoffice.apps.parcelshop {
+    namespace fragments {
+        class co.uk.postoffice.apps.parcelshop.fragments.FragmentInit
+        class co.uk.postoffice.apps.parcelshop.fragments.FragmentWeb
+        class co.uk.postoffice.apps.parcelshop.fragments.FragmentSet
+        class co.uk.postoffice.apps.parcelshop.fragments.ScreenReceiver
+    }
+  }
+  
+
+  namespace co.uk.postoffice.apps.parcelshop {
+    namespace javascriptbridge {
+      class co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInject
+      class co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInjectSettings
+    }
+  }
+  
+  namespace co.uk.postoffice.apps.parcelshop {
+    namespace services {
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver
+      class co.uk.postoffice.apps.parcelshop.services.BatteryService
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothPairingBroadcastReceiver
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothService
+      interface co.uk.postoffice.apps.parcelshop.services.IBatteryService
+      interface co.uk.postoffice.apps.parcelshop.services.IBluetoothService
+      interface co.uk.postoffice.apps.parcelshop.services.IWifiService
+      class co.uk.postoffice.apps.parcelshop.services.WifiService
+    }
+  }
+
+
+  co.uk.postoffice.apps.parcelshop.services.BatteryService .up.|> co.uk.postoffice.apps.parcelshop.services.IBatteryService
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService .up.|> co.uk.postoffice.apps.parcelshop.services.IBluetoothService
+  co.uk.postoffice.apps.parcelshop.services.WifiService .up.|> co.uk.postoffice.apps.parcelshop.services.IWifiService
+  co.uk.postoffice.apps.parcelshop.services.WifiService ..> co.uk.postoffice.apps.parcelshop.dtos.AccessPointDTO : uses
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService ..> co.uk.postoffice.apps.parcelshop.dtos.BluetoothDeviceDTO : uses
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService *-- co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService *-- co.uk.postoffice.apps.parcelshop.services.BluetoothPairingBroadcastReceiver
+  co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInjectSettings <|-- co.uk.postoffice.apps.parcelshop.services.WifiService
+  co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInjectSettings <|-- co.uk.postoffice.apps.parcelshop.services.BluetoothService
+  co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInjectSettings <|-- co.uk.postoffice.apps.parcelshop.services.BatteryService
+  co.uk.postoffice.apps.parcelshop.MainActivity *-- co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInjectSettings
+  co.uk.postoffice.apps.parcelshop.MainActivity *-- co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInject
+  co.uk.postoffice.apps.parcelshop.MainActivity *-- co.uk.postoffice.apps.parcelshop.fragments.FragmentInit
+  co.uk.postoffice.apps.parcelshop.MainActivity *-- co.uk.postoffice.apps.parcelshop.fragments.FragmentWeb
+  co.uk.postoffice.apps.parcelshop.fragments.FragmentWeb *-- co.uk.postoffice.apps.parcelshop.fragments.ScreenReceiver
+  co.uk.postoffice.apps.parcelshop.fragments.FragmentWeb ..|> co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInjectSettings
+  co.uk.postoffice.apps.parcelshop.fragments.FragmentWeb ..|> co.uk.postoffice.apps.parcelshop.javascriptbridge.AndroidInject
+
+right footer
+
+
+endfooter
+
+@enduml

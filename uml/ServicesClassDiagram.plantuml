@@ -1,0 +1,162 @@
+@startuml
+
+title __SERVICES's Class Diagram__\n
+
+  namespace co.uk.postoffice.apps.parcelshop {
+    namespace services {
+      class co.uk.postoffice.apps.parcelshop.services.BatteryService {
+          {static} + Companion : Companion
+          {static} + LOGGER : Logger
+          - context : Context
+          + BatteryService()
+          + getBatteryPercentage()
+          + getContext()
+          + isCharging()
+      }
+      class co.uk.postoffice.apps.parcelshop.services.BatteryService.Companion {
+                + Companion()
+                + getLOGGER()
+                - Companion()
+            }
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver {
+                {static} + CONNECTED : int
+                {static} + Companion : Companion
+                {static} + DISCONNECTED : int
+                - deviceList : ArrayList<BluetoothDevice>
+                - deviceState : int
+                + getDeviceList()
+                + getDeviceState()
+                + onReceive()
+                - setDeviceList()
+                - setDeviceState()
+            }
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver.Companion {
+                + Companion()
+                - Companion()
+            }
+
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothPairingBroadcastReceiver {
+          - deviceList : ArrayList<BluetoothDevice>
+          + getDeviceList()
+          + onReceive()
+          - setDeviceList()
+          - showToast()
+      }
+
+
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothService {
+          {static} + Companion : Companion
+          {static} + LOGGER : Logger
+          {static} + deviceList : ArrayList<BluetoothDevice>
+          {static} + gson : Gson
+          - bAdapter : BluetoothAdapter
+          - bluetoothManager : BluetoothManager
+          - context : Context
+          + BluetoothService()
+          + getContext()
+          + getNearbyDevices()
+          + getPairedDevices()
+          + isBluetoothConnected()
+          + isBluetoothEnabled()
+          + pairDevice()
+          + print()
+          + print()
+          + turnOff()
+          + turnOn()
+          + unpairDevice()
+          + unpairDevice()
+          - convertBase64ImageToBitmap()
+          - registerBroadcaster()
+          - registerPairingBroadcastReceiver()
+          - sendCommand()
+          - sendImageToPrinter()
+          - setupFilter()
+          - unpairAllDevices()
+      }
+
+      class co.uk.postoffice.apps.parcelshop.services.BluetoothService.Companion {
+          + Companion()
+          + getDeviceList()
+          + getGson()
+          + getLOGGER()
+          + setDeviceList()
+          + setGson()
+          - Companion()
+      }
+
+      interface co.uk.postoffice.apps.parcelshop.services.IBatteryService {
+          {abstract} + getBatteryPercentage()
+          {abstract} + isCharging()
+      }
+      interface co.uk.postoffice.apps.parcelshop.services.IBluetoothService {
+          {abstract} + getNearbyDevices()
+          {abstract} + getPairedDevices()
+          {abstract} + isBluetoothConnected()
+          {abstract} + isBluetoothEnabled()
+          {abstract} + pairDevice()
+          {abstract} + print()
+          {abstract} + print()
+          {abstract} + turnOff()
+          {abstract} + turnOn()
+          {abstract} + unpairDevice()
+          {abstract} + unpairDevice()
+      }
+      interface co.uk.postoffice.apps.parcelshop.services.IWifiService {
+          {abstract} + connectToAP()
+          {abstract} + disconnect()
+          {abstract} + getAllNetworks()
+          {abstract} + isWifiConnected()
+          {abstract} + isWifiEnabled()
+          {abstract} + turnOff()
+      }
+
+      class co.uk.postoffice.apps.parcelshop.services.WifiService {
+          {static} + Companion : Companion
+          {static} + LOGGER : Logger
+          {static} + apList : ArrayList<AccessPointDTO>
+          {static} + gson : Gson
+          + wifiManager : WifiManager
+          - context : Context
+          - mWifiScanReceiver : WifiService$mWifiScanReceiver$1
+          + WifiService()
+          + connectToAP()
+          + disconnect()
+          + getAllNetworks()
+          + getContext()
+          + isWifiConnected()
+          + isWifiEnabled()
+          + turnOff()
+          - createAPConfiguration()
+          - getScanResultSecurity()
+          - isConnectedToWifi()
+      }
+      class co.uk.postoffice.apps.parcelshop.services.WifiService.Companion {
+                + Companion()
+                + getApList()
+                + getGson()
+                + getLOGGER()
+                + setApList()
+                + setGson()
+                - Companion()
+            }
+
+  }
+
+
+  co.uk.postoffice.apps.parcelshop.services.BatteryService .up.|> co.uk.postoffice.apps.parcelshop.services.IBatteryService
+  co.uk.postoffice.apps.parcelshop.services.BatteryService +-down- co.uk.postoffice.apps.parcelshop.services.BatteryService.Companion
+  co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver +-down- co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver.Companion
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService *-- co.uk.postoffice.apps.parcelshop.services.BluetoothBroadcastReceiver
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService *-- co.uk.postoffice.apps.parcelshop.services.BluetoothPairingBroadcastReceiver
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService .up.|> co.uk.postoffice.apps.parcelshop.services.IBluetoothService
+  co.uk.postoffice.apps.parcelshop.services.BluetoothService +-down- co.uk.postoffice.apps.parcelshop.services.BluetoothService.Companion
+  co.uk.postoffice.apps.parcelshop.services.WifiService .up.|> co.uk.postoffice.apps.parcelshop.services.IWifiService
+  co.uk.postoffice.apps.parcelshop.services.WifiService +-down- co.uk.postoffice.apps.parcelshop.services.WifiService.Companion
+
+
+right footer
+
+
+endfooter
+
+@enduml
