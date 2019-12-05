@@ -27,6 +27,8 @@ cache:
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
 script:
+- "./gradlew assembleDebug"
+- "./gradlew assemblePreprod"
 - "./gradlew assembleRelease"
 deploy:
   provider: releases
@@ -34,7 +36,10 @@ deploy:
   api_key:
     secure: yOX/0XugM082ctByKH4TxdohpndK2Kb6Tfd7U/PhWQn5PxAQrmROVnK0tnFsS069PPNdlqyV4o5PPkJDqgGdhr7tbd2em1in0vjq97ybWsiE62RLIld5M3c+KoWkpjt6jlZpKdQ5he6NZX5Ev5a0XbJXAz3PYpYArJpFP36e0zaXyM2/RZtQR6uy/94JYEoNSzi4aYTJE8fd57sEZd/Ol6WczwFqZly2beTSmeO8Im9QM5qw6eaGXkYLPXGOD2ZZRnM0tolaLr3FxNrcEFQxNl8loQRfDORXaSA18IvYWSH6CXohgzvTz9R7ypS04zLw5Jx4l0BBYfXQfpg61QCxXrKLNIE6BePqmLBE8S577zr5Pv7RieuzSGz9ClYGOcjBbJG40G7FKMRc7j1r9k8PxxW9PyFwj8vN1uEhcT3kj2zQjoUHvlcKoGP0oiXTspfDUUU0JCrcvsk3biOXdDPcu7Ucju/+hW2SYCzViggvh2Y7LUdqf+HRzGMUNTZRUfRRu2hfxsbVbqYi9Lm4hMzdXSK9F+gy4p328/DyO5oO2Pu2DWcEH1L5ic+ORN6VPxVEn3l8jFunaL7V/CuEqA8pWS/ZZ6mu2ri79zDy10Rc1g2HcMrxB9EA4B1HcNXXIWzZsckX3oJrD41JfF8h7C4oEOaxWyhX9Rq3Hgt94/SlEeY=
   file_glob: true
-  file: "/home/travis/build/AlirezaAtGeeks/android_pipeline_test/app/build/outputs/apk/release/*.apk"
+  file:
+    - "/home/travis/build/AlirezaAtGeeks/android_pipeline_test/app/build/outputs/apk/release/*.apk"
+    - "/home/travis/build/AlirezaAtGeeks/android_pipeline_test/app/build/outputs/apk/preprod/*.apk"
+    - "/home/travis/build/AlirezaAtGeeks/android_pipeline_test/app/build/outputs/apk/debug/*.apk"
   on:
     repo: AlirezaAtGeeks/android_pipeline_test
     tags: true
