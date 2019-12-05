@@ -38,13 +38,7 @@ android {
     }
 
     signingConfigs {
-        releaseSigningConfig{
-            storeFile file(project.ext.releaseKeyStore)
-            storePassword project.ext.releaseKeyStorePassword
-            keyAlias    project.ext.releaseKeyAlias
-            keyPassword project.ext.releaseKeyPassword
-
-        }
+        releaseSigningConfig
     }
 
 
@@ -94,6 +88,11 @@ android {
         signingConfigs.releaseSigningConfig.storePassword = System.getenv("keystore_password")
         signingConfigs.releaseSigningConfig.keyAlias = System.getenv("keystore_alias")
         signingConfigs.releaseSigningConfig.keyPassword = System.getenv("keystore_alias_password")
+    } else {
+        signingConfigs.releaseSigningConfig.storeFile =  file(project.ext.releaseKeyStore)
+        signingConfigs.releaseSigningConfig.storePassword = project.ext.releaseKeyStorePassword
+        signingConfigs.releaseSigningConfig.keyAlias =    project.ext.releaseKeyAlias
+        signingConfigs.releaseSigningConfig.keyPassword = project.ext.releaseKeyPassword
     }
 }
 
