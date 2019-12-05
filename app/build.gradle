@@ -90,7 +90,7 @@ android {
 
     if (isRunningOnTravis) {
         // configure keystore
-        signingConfigs.releaseSigningConfig.storeFile = file("../OurStore.keystore")
+        signingConfigs.releaseSigningConfig.storeFile = file("../postoffice.jks")
         signingConfigs.releaseSigningConfig.storePassword = System.getenv("keystore_password")
         signingConfigs.releaseSigningConfig.keyAlias = System.getenv("keystore_alias")
         signingConfigs.releaseSigningConfig.keyPassword = System.getenv("keystore_alias_password")
